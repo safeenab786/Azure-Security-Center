@@ -1,6 +1,10 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
+    "metadata": {
+        "comments": "This playbook will send a notification alert if the Azure Security Center SecureScore reduces by X%.",
+        "author": "Safeena Begum"
+    },
     "parameters": {
         "PlaybookName": {
             "defaultValue": "Send-SecureScoreReductionAlert",
@@ -11,10 +15,16 @@
             "defaultValue": "Enter the workspace name"
         },
         "LogAnalyticsWorkspaceResourceGroupName": {
-            "type": "string"
+            "type": "string",
+            "metadata": {
+                "displayName": "Resource Group Name of the LA workspace",
+                "description": "Resource Group Name of the LA workspace"
         },
         "LogAnalyticsWorkspaceSubscriptionID": {
-            "type": "string"
+            "type": "string",
+             "metadata": {
+                "displayName": "SubscriptionID of the LA workspace",
+                "description": "SubscriptionID of the LA workspace"
         },
         "ScanfrequencyHour": {
             "defaultValue": 1,
